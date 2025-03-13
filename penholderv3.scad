@@ -109,6 +109,6 @@ module front(){
 
 
 
-//front();
+front();
 plaque(); 
 

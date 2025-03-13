@@ -4,8 +4,8 @@
 #define MotorInterfaceType 4
 
 // Define stepper motors with new pins
-AccelStepper X(MotorInterfaceType, 3, 5, 4, 6);
-AccelStepper Y(MotorInterfaceType, A0, A2, A1, A3);
+AccelStepper X(MotorInterfaceType, 2, 4, 3, 5);
+AccelStepper Y(MotorInterfaceType, 8, 10, 9, 11);
 MultiStepper XY;
 
 // Position array
