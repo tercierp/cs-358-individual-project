@@ -24,7 +24,7 @@ char alphabet[10] = {0};
 char axiom[30] = {0};
 char rules[MAX_RULES][MAX_RULE_LENGTH] = {{0}};
 int depth = 0, angle = 0;
-float scale = 50.0;  // Step size for movements
+float scale = 100.0;  // Step size for movements
 
 // Turtle Graphics State
 float posX = 0, posY = 0;
