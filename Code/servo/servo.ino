@@ -8,7 +8,7 @@ void setup() {
 }
 void loop() 
 { 
-  penup();
+  pendown();
 }
 void penup() {
   servo.write(angle-delta);

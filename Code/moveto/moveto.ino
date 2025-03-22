@@ -1,7 +1,12 @@
+#include <Servo.h>
 #include <AccelStepper.h>
 #include <MultiStepper.h>
 
 #define MotorInterfaceType 4
+
+Servo servo;
+int angle = 90;
+int delta = 3;
 
 // Define stepper motors with new pins
 AccelStepper X(MotorInterfaceType, 2, 4, 3, 5);
@@ -13,6 +18,8 @@ long pos_xy[2] = {0, 0};
 bool isDone = true;  // Flag to ensure movement happens only once
 
 void setup() {
+    servo.attach(6);
+    penup();
     Serial.begin(9600);
     Serial.println("Enter target X, Y position:");
 
@@ -56,4 +63,10 @@ void moveToPosition(long endX, long endY) {
         isDone = true;  // Set flag to prevent re-running
         Serial.println("Movement complete. Waiting for new target...");
     }
+}
+
+void penup() {
+    // Lift the pen by setting the servo to a higher position
+    servo.write(angle - delta);
+    delay(100); // Delay to allow the servo to move
 }
